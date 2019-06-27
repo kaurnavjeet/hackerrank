@@ -161,3 +161,57 @@ class Square extends Rectangle {
     super(s, s);
   }
 }
+
+// Task
+
+// The code in the editor has a tagged template literal that passes the area and perimeter of a rectangle to a tag function named sides. Recall that the first argument of a tag function is an array of string literals from the template, and the subsequent values are the template's respective expression values.
+
+// Complete the function in the editor so that it does the following:
+
+// Finds the initial values of  and  by plugging the area and perimeter values into the formula:
+// where  is the rectangle's area and  is its perimeter.
+// Creates an array consisting of  and  and sorts it in ascending order.
+// Returns the sorted array.
+
+function sides(literals, ...expressions) {
+  let a = expressions[0];
+  let p = expressions[1];
+ 
+
+  let s1 = (p + Math.sqrt(p * p - 16 * a)) / 4;
+  let s2 = (p - Math.sqrt(p * p - 16 * a)) / 4;
+
+  
+  return [s1, s2].sort();
+}
+
+// Task
+
+// Complete the function in the editor. It has one parameter: an array, . It must iterate through the array performing one of the following actions on each element:
+
+// If the element is even, multiply the element by .
+// If the element is odd, multiply the element by .
+// The function must then return the modified array.
+
+function modifyArray(nums) {
+  let modified = nums.map((num) => num % 2 ? num * 3 : num * 2)
+  return modified
+}
+
+
+// Task
+
+// Complete the function in the editor below by returning a RegExp object, , that matches any string  that begins and ends with the same vowel. Recall that the English vowels are a, e, i, o, and u.
+
+function regexVar() {
+  /*
+   * Declare a RegExp object variable named 're'
+   * It must match a string that starts and ends with the same vowel (i.e., {a, e, i, o, u})
+   */
+  
+  let re = /^([aeiou]).*\1$/
+  /*
+   * Do not remove the return statement
+   */
+  return re;
+}
