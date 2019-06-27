@@ -48,3 +48,62 @@ function vowelsAndConsonants(s) {
     console.log(consonants[i]);
   }
 }
+
+// Task
+
+// Complete the getLetter(s) function in the editor. It has one parameter: a string, , consisting of lowercase English alphabetic letters (i.e., a through z). It must return A, B, C, or D depending on the following criteria:
+
+// If the first character in string  is in the set (a,e,i,o,u), then return A.
+// If the first character in string  is in the set (b,c,d,f,g), then return B.
+// If the first character in string  is in the set (h,j,k,l,m), then return C.
+// If the first character in string  is in the set (n,p,q,r,s,t,v,w,x,y,z), then return D.
+
+function getLetter(s) {
+  let letter;
+  // Write your code here
+  switch (true) {
+    case /[aeiou]+/.test(s[0]):
+      letter = "A";
+      break;
+    case /[bcdfg]+/.test(s[0]):
+      letter = "B";
+      break;
+    case /[hjklm]+/.test(s[0]):
+      letter = "C";
+      break;
+    case /[npqrstvwxyz]+/.test(s[0]):
+      letter = "D";
+      break;
+    default:
+      return "No match found";
+  }
+  return letter;
+}
+
+// Task
+
+// Complete the getSecondLargest function in the editor below. It has one parameter: an array, , of  numbers. The function must find and return the second largest number in .
+
+function getSecondLargest(nums) {
+  // Complete the function
+  let sortedArr = nums.sort(function(a, b) {
+    return a - b;
+  });
+  let unique = [...new Set(sortedArr)];
+  return unique[unique.length - 2];
+}
+
+// Task
+
+// Complete the function in the editor. It has one parameter: an array, , of objects. Each object in the array has two integer properties denoted by  and . The function must return a count of all such objects  in array  that satisfy .
+
+function getCount(objects) {
+  let count = 0;
+
+  for (let i = 0; i < objects.length; i++) {
+    if (objects[i].x === objects[i].y) {
+      count++;
+    }
+  }
+  return count;
+}
