@@ -176,12 +176,10 @@ class Square extends Rectangle {
 function sides(literals, ...expressions) {
   let a = expressions[0];
   let p = expressions[1];
- 
 
   let s1 = (p + Math.sqrt(p * p - 16 * a)) / 4;
   let s2 = (p - Math.sqrt(p * p - 16 * a)) / 4;
 
-  
   return [s1, s2].sort();
 }
 
@@ -194,10 +192,9 @@ function sides(literals, ...expressions) {
 // The function must then return the modified array.
 
 function modifyArray(nums) {
-  let modified = nums.map((num) => num % 2 ? num * 3 : num * 2)
-  return modified
+  let modified = nums.map(num => (num % 2 ? num * 3 : num * 2));
+  return modified;
 }
-
 
 // Task
 
@@ -208,10 +205,24 @@ function regexVar() {
    * Declare a RegExp object variable named 're'
    * It must match a string that starts and ends with the same vowel (i.e., {a, e, i, o, u})
    */
-  
-  let re = /^([aeiou]).*\1$/
+
+  let re = /^([aeiou]).*\1$/;
   /*
    * Do not remove the return statement
    */
   return re;
+}
+
+// Task
+
+// We define  to be a sequence of distinct sequential integers from  to ; in other words, . We want to know the maximum bitwise AND value of any two integers,  and  (where ), in sequence  that is also less than a given integer, .
+
+// Complete the function in the editor so that given  and , it returns the maximum .
+
+function getMaxLessThanK(n, k) {
+  if (((k - 1) | k) <= n) {
+    return k - 1;
+  } else {
+    return k - 2;
+  }
 }
